@@ -1,0 +1,2 @@
+# GelecekHayalim-W-Code2.0_VERIBILIMIVEYAPAYZEKA_atolyecileri_ZelihaGuven
+Küresel Readiness Eşitsizliklerini Sayılarla Görünür Kılmak
