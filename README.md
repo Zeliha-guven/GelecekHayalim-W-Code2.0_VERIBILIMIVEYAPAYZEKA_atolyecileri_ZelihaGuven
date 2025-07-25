@@ -1,41 +1,68 @@
-# 🌍 GelecekHayalim – W-Code2.0: Climate Readiness Inequality  
-**Project by Zeliha Güven**
+🌍 GelecekHayalim – W-Code2.0: Climate Readiness Inequality
+Project by Zeliha Güven
 
-📌 *Küresel Readiness Eşitsizliklerini Sayılarla Görünür Kılmak*  
-📌 *Making Global Readiness Inequalities Visible Through Data*
+📌 Küresel Readiness Eşitsizliklerini Sayılarla Görünür Kılmak 📌 Making Global Readiness Inequalities Visible Through Data
 
-**🇹🇷 Türkçe:**  
-Bu proje, ND-GAIN, OWID ve World Bank veri setlerini birleştirerek küresel iklim hazırlık eşitsizliklerini görünür kılmayı amaçlamaktadır. CO₂ salımları, enerji kullanımı ve kişi başı gelir gibi göstergeler aracılığıyla çevresel kırılganlık ve sosyoekonomik kapasite arasındaki ilişkiler incelenir.
+🇹🇷 Türkçe Açıklama
+Bu proje, ND-GAIN, OWID ve World Bank veri setlerini birleştirerek küresel iklim hazırlık eşitsizliklerini görünür kılmayı hedeflemektedir. Kişi başı CO₂ salımı, enerji tüketimi ve kişi başı gelir gibi göstergeler kullanılarak çevresel kırılganlık ve sosyoekonomik kapasite arasındaki eşitsizlikler analiz edilmiştir.
 
-**🇬🇧 English:**  
-This project aims to make global climate readiness inequalities visible by integrating datasets from ND-GAIN, OWID, and the World Bank. Through indicators like CO₂ emissions, energy usage, and GDP per capita, it investigates the relationship between environmental vulnerability and socioeconomic capacity.
+🔍 Veri Hazırlama ve Temizleme
+2023 yılı ve eksik GDP verileri olan ülkeler çıkarıldı.
 
-🇹🇷 Analiz Dosyasında Neler Yapıldı?
-merge.csv ile farklı kaynaklardan gelen veriler birleştirildi.
+Korelasyon analizi ile düşük etkili değişkenler temizlendi.
 
-Eksik GDP verileri olan 2023 yılı ve temsil gücü zayıf ülkeler veri setinden çıkarıldı.
+Hazırlık skorları yıl bazlı sınıflandırıldı.
 
-Korelasyon analiziyle modele katkı sunmayan kolonlar belirlendi ve çıkarıldı.
+Eksik veriler XGBoost regresyon ile tahmin edildi.
 
-Hazırlık skorları yıl bazında ortalama ve standart sapma ile sınıflandırıldı.
+Özellikle sağlık, yönetişim, ekosistem gibi bileşenlere odaklanıldı.
 
-CO₂ kişi başı emisyonuna göre ülke grupları oluşturularak “İklim Adaleti Üçgeni” görselleştirildi.
+🗺️ Görselleştirme ve Modelleme
+Choropleth haritalarla küresel hazırlık ve CO₂ dağılımı görselleştirildi.
 
-Choropleth haritasıyla hazırlık düzeyleri ve CO₂ dağılımı küresel ölçekte gösterildi.
+CO₂ kişi başı salım ve hazırlık skoruna göre “İklim Adaleti Üçgeni” oluşturuldu.
 
-Ekosistem bileşenlerindeki eksik veriler bayraklandı ve gözlemler uyarlandı.
+Regresyon ve XGBoost modelleri RMSE ve R² ile değerlendirildi.
 
-🇬🇧 What Was Done in the Analysis File?
-Combined multiple datasets into merge.csv.
+Öne çıkan değişkenler: kişi başı gelir, sağlık, ekosistem etkisi.
 
-Removed 2023 records with missing GDP values and low-representation countries.
+📌 Politika Önerileri
+Doğa temelli çözümler
 
-Applied correlation analysis to eliminate non-contributing features.
+Yenilenebilir enerjiye geçiş
 
-Classified readiness scores annually using mean and standard deviation.
+Topluluk odaklı uyum stratejileri
 
-Created “Climate Justice Triangle” groups based on CO₂ emissions per capita.
+Açık veri ve uluslararası işbirliği
 
-Visualized global readiness levels and CO₂ data with a choropleth map.
+🇬🇧 English Description
+This project aims to make global climate readiness inequalities visible by integrating datasets from ND-GAIN, OWID, and the World Bank. Indicators such as CO₂ emissions per capita, energy usage, and GDP per capita are used to analyze the imbalance between environmental vulnerability and socioeconomic resilience.
 
-Flagged missing ecosystem indicators and adjusted affected observations.
+🔍 Data Preparation and Cleaning
+Removed 2023 entries and countries with missing GDP data.
+
+Applied correlation analysis to filter out low-impact variables.
+
+Classified readiness scores annually using statistical thresholds.
+
+Used XGBoost regression to impute missing values in health, governance, ecosystems, etc.
+
+Focused on key readiness components for modeling.
+
+🗺️ Visualization and Modeling
+Created choropleth maps to visualize global readiness and CO₂ distribution.
+
+Built the “Climate Justice Triangle” based on per capita CO₂ and readiness scores.
+
+Evaluated regression and XGBoost models with RMSE and R² metrics.
+
+Key features driving predictions: GDP per capita, health, ecological exposure.
+
+📌 Policy Suggestions
+Nature-based climate adaptation
+
+Transition to renewable energy
+
+Community-centered resilience models
+
+Open data and fair international cooperation
