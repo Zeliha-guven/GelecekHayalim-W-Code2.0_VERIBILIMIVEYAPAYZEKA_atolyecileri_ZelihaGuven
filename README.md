@@ -1,68 +1,102 @@
-🌍 GelecekHayalim – W-Code2.0: Climate Readiness Inequality
+# 🌍 GelecekHayalim – W-Code 2.0: Climate Readiness Inequality  
+📊 Making Global Readiness Inequalities Visible Through Data  
 Project by Zeliha Güven
 
-📌 Küresel Readiness Eşitsizliklerini Sayılarla Görünür Kılmak 📌 Making Global Readiness Inequalities Visible Through Data
+---
 
-🇹🇷 Türkçe Açıklama
-Bu proje, ND-GAIN, OWID ve World Bank veri setlerini birleştirerek küresel iklim hazırlık eşitsizliklerini görünür kılmayı hedeflemektedir. Kişi başı CO₂ salımı, enerji tüketimi ve kişi başı gelir gibi göstergeler kullanılarak çevresel kırılganlık ve sosyoekonomik kapasite arasındaki eşitsizlikler analiz edilmiştir.
+## 🇹🇷 Proje Hakkında  
+İklim krizi tüm gezegeni etkiliyor—fakat eşit değil. Tarihsel olarak en az karbon salımı yapan ülkeler, en çok zarar görenler. Bu proje, “En az sorumlu olanlar en yüksek bedeli ödüyor” mesajını veri ve görselleştirmelerle ortaya koyuyor.
 
-🔍 Veri Hazırlama ve Temizleme
-2023 yılı ve eksik GDP verileri olan ülkeler çıkarıldı.
+ND-GAIN, OWID ve World Bank verileriyle ülkelerin iklim hazırlık skorları, çevresel kırılganlıkları ve sosyoekonomik dirençleri analiz edildi. Amaç, eşitsizlikleri göstermek ve iklim adaletine destek olmaktır.
 
-Korelasyon analizi ile düşük etkili değişkenler temizlendi.
+---
 
-Hazırlık skorları yıl bazlı sınıflandırıldı.
+## 🇬🇧 About the Project  
+The climate crisis affects the planet unevenly. Countries contributing least often suffer most. This project highlights “Those least responsible pay the highest price” using open data from ND-GAIN, OWID, and World Bank. It reveals disparities and supports climate justice.
 
-Eksik veriler XGBoost regresyon ile tahmin edildi.
+---
 
-Özellikle sağlık, yönetişim, ekosistem gibi bileşenlere odaklanıldı.
+## 🛠️ Nasıl Çalıştırılır / How to Run  
 
-🗺️ Görselleştirme ve Modelleme
-Choropleth haritalarla küresel hazırlık ve CO₂ dağılımı görselleştirildi.
+### 🇹🇷  
+1. Gerekli kütüphaneleri yükleyin:  
+pip install pandas numpy matplotlib seaborn plotly scikit-learn xgboost geopandas
 
-CO₂ kişi başı salım ve hazırlık skoruna göre “İklim Adaleti Üçgeni” oluşturuldu.
+2. Jupyter Notebook'u başlatın:  
+3. Aşağıdaki dosyaları sırayla çalıştırın:  
+- `merge_climate_data.ipynb` – Veri birleştirme ve temizleme  
+- `analysis.ipynb` – Görselleştirme ve analiz  
+- `model.ipynb` – Readiness tahmini (XGBoost)
 
-Regresyon ve XGBoost modelleri RMSE ve R² ile değerlendirildi.
+### 🇬🇧  
+1. Install required libraries:  
+pip install pandas numpy matplotlib seaborn plotly scikit-learn xgboost geopandas
 
-Öne çıkan değişkenler: kişi başı gelir, sağlık, ekosistem etkisi.
+2. Launch Jupyter Notebook:  
+3. Run notebooks in order:  
+- `merge_climate_data.ipynb` – Merging and cleaning data  
+- `analysis.ipynb` – Visualization and inequality analysis  
+- `model.ipynb` – Predicting readiness with XGBoost
 
-📌 Politika Önerileri
-Doğa temelli çözümler
+---
 
-Yenilenebilir enerjiye geçiş
+Veri Kaynakları / Data Sources
+ND-GAIN: https://gain.nd.edu
 
-Topluluk odaklı uyum stratejileri
+Our World in Data (OWID): https://ourworldindata.org
 
-Açık veri ve uluslararası işbirliği
+World Bank Open Data: https://data.worldbank.org
+## 📊 Analiz Özeti / Analysis Summary  
 
-🇬🇧 English Description
-This project aims to make global climate readiness inequalities visible by integrating datasets from ND-GAIN, OWID, and the World Bank. Indicators such as CO₂ emissions per capita, energy usage, and GDP per capita are used to analyze the imbalance between environmental vulnerability and socioeconomic resilience.
+## 📊 İklim Adaleti Üçgeni Görselleştirmesi //  Climate Readiness Analysis
 
-🔍 Data Preparation and Cleaning
-Removed 2023 entries and countries with missing GDP data.
+![İklim Hazırlık Analizi Görseli](image.png)
 
-Applied correlation analysis to filter out low-impact variables.
 
-Classified readiness scores annually using statistical thresholds.
+## 📊 Analiz Özeti / Analysis Summary  
 
-Used XGBoost regression to impute missing values in health, governance, ecosystems, etc.
+### 🇹🇷  
+Hazırlık skorları ile kişi başı CO₂ emisyonları karşılaştırıldı. En çok salım yapan ülkeler en hazırlıklı, düşük salımlılar ise en kırılgan durumda. Bu adaletsizlik “İklim Adaleti Üçgeni” görseliyle sunuldu.
 
-Focused on key readiness components for modeling.
+### 🇬🇧  
+Readiness scores were compared with per capita CO₂ emissions. High emitters are most prepared; low emitters are most vulnerable. Visualized via the “Climate Justice Triangle.”
 
-🗺️ Visualization and Modeling
-Created choropleth maps to visualize global readiness and CO₂ distribution.
+---
 
-Built the “Climate Justice Triangle” based on per capita CO₂ and readiness scores.
+## 📈 Modelleme ve Eksik Veri Tahmini / Modeling & Missing Data Imputation  
 
-Evaluated regression and XGBoost models with RMSE and R² metrics.
+### 🇹🇷  
+Eksik veriler XGBoost ile başarıyla tahmin edilip tamamlandı. Readiness skorları için XGBoost regresyon modeli %99’a yakın doğruluk sağladı. Model, önemli etkenleri (health, person_gdp, economic) ortaya koydu.
 
-Key features driving predictions: GDP per capita, health, ecological exposure.
+### 🇬🇧  
+Missing data were imputed using XGBoost. The readiness prediction model achieved ~99% accuracy. Key drivers identified: health, person_gdp, and economic factors.
 
-📌 Policy Suggestions
-Nature-based climate adaptation
+---
 
-Transition to renewable energy
+## 🌍 Sonuçlar: Hazır Olanlar, Sorumlu Olanlar ve Geride Kalanlar / The Ready, the Responsible, and the Left Behind  
 
-Community-centered resilience models
+### 🇹🇷  
+Ülkeler, hazırlık ve kişi başı CO₂ emisyonlarına göre gruplandı:  
+* **Yüksek Hazırlık + Yüksek Emisyon:** ABD, Suudi Arabistan, Avustralya  
+* **Yüksek Hazırlık + Düşük Emisyon:** Tuvalu, İsveç, Barbados  
+* **Düşük Hazırlık + Düşük Emisyon:** Burundi, Uganda, Malavi  
 
-Open data and fair international cooperation
+Bu, iklim adaletindeki eşitsizliği gösteriyor. Ancak topluluk odaklı ve sürdürülebilir yaklaşımlar umut veriyor.  
+
+### 🇬🇧  
+Countries grouped by readiness and per capita CO₂ emissions:  
+* **High Readiness + High Emissions:** USA, Saudi Arabia, Australia  
+* **High Readiness + Low Emissions:** Tuvalu, Sweden, Barbados  
+* **Low Readiness + Low Emissions:** Burundi, Uganda, Malawi  
+
+This highlights climate justice disparities, yet community-focused, sustainable approaches offer hope.
+
+---
+
+---
+
+## 📬 İletişim / Contact
+
+Zeliha Güven  
+Email: zelihguven@gmail.com  
+LinkedIn: [linkedin.com/in/zeliha-guven](https://www.linkedin.com/in/zeliha-guven)
